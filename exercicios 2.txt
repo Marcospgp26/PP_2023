@@ -551,6 +551,7 @@ int main()
     {
         printf("Numero indivisivel por 5.\n");
     }
+    return 0;
 }
 
 20
@@ -862,7 +863,7 @@ int main()
     return 0;
 }
 
-28 VERIFICAR
+28 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -909,6 +910,7 @@ int main()
             break;
     }
     printf("O resultado da operacao eh: %f", resultado);
+    return 0;
 }
 
 29
