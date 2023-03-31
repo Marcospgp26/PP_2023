@@ -340,6 +340,7 @@ int main()
         media = (Trabalho_lab * 2 + avaliacao_semestral * 3 + exame_final *5)/3;
 
     }
+    return 0;
 }
 
 15
