@@ -48,6 +48,7 @@ int main()
         printf("%i ", i);
         i++;
     }while(i <= 100);
+    return 0;
 }
 
 3
@@ -81,6 +82,7 @@ int main()
             printf("%i ", num);
             num = num + 1000;
         }
+        return 0;
 
     }
 
@@ -123,6 +125,7 @@ int main()
     }
     media = soma / 10;
     printf("A media eh: %f", media);
+    return 0;
 
 }
 
@@ -149,6 +152,7 @@ int main()
     }
     media = soma / 10;
     printf("A media eh: %f", media);
+    return 0;
 
 }
 
@@ -212,6 +216,7 @@ int main()
                 N --;
             }
         }
+        return 0;
 
     }
 
@@ -229,6 +234,7 @@ int main()
 
         }
         printf("%i ", soma);
+        return 0;
 
     }
 
@@ -255,9 +261,11 @@ int main()
                 N--;
             }
         }
+        return 0;
 
     }
-12 VERIFICAR NUMERO NEGATIVO
+    
+12 
 #include <stdio.h>
 
 int main()
@@ -353,6 +361,7 @@ int main()
         raiz = sqrt(valor);
         printf("O quadrado eh: %f O cubo eh: %f A raiz eh: %f \n \n", quadrado, cubo, raiz);
     }while(valor > 0);
+    return 0;
 }
 
 16
@@ -421,6 +430,7 @@ int main()
                 printf("Opcao inexistente \n \n");
         }
     }while(opcao != 5);
+    return 0;
 }
 
 17
@@ -455,6 +465,7 @@ int main()
         aumento = aumento * 2;
     }
     printf("O salario final eh de: %lf", sal);
+    return 0;
 }
 
 19
@@ -619,4 +630,5 @@ int main()
         }
         printf("\n");
     }
+    return 0;
 }
