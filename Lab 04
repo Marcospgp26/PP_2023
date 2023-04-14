@@ -1,1 +1,144 @@
+EXERCÍCIO 1
+
+#include <stdio.h>
+int dobro(int a);
+
+int main()
+{
+    int num, n2;
+    printf("Insira um numero inteiro ]: \n");
+    scanf("%i", &num);
+
+    n2 = dobro(num);
+
+    printf("O numero eh: %i", n2);
+    return 0;
+}
+
+int dobro(int a)
+{
+    return 2 * a;
+}
+
+
+EXERCÍCIO 2
+#include <stdio.h>
+
+void data(int x, int y, int z);
+
+int main()
+{
+    int dia, mes, ano;
+    printf("Insira um dia: \n");
+    scanf("%i", &dia);
+
+    printf("Insira um mes: \n");
+    scanf("%i", &mes);
+
+    printf("Insira um ano: \n");
+    scanf("%i", &ano);
+
+
+    data(dia, mes, ano);
+
+    return 0;
+}
+
+void data(int x, int y, int z)
+{
+    switch(y)
+        {
+
+        case 1:
+            printf("%i de Janeiro de %i", x, z);
+            break;
+        case 2:
+            printf(" %i de Fevereiro de %i", x, z);
+            break;
+        case 3:
+            printf("%i de Marco de %i", x, z);
+            break;
+        case 4:
+            printf(" %i de Abril de %i", x, z);
+            break;
+        case 5:
+            printf(" %i de Maio de %i", x, z);
+            break;
+        case 6:
+            printf(" %i de Junho de %i",x, z);
+            break;
+        case 7:
+            printf(" %i de Julho de %i", x, z);
+            break;
+        case 8:
+            printf("%i de Agosto de %i", x, z);
+            break;
+        case 9:
+            printf("%i de Setembro de %i", x, z);
+            break;
+        case 10:
+            printf("%i de Outubro de %i", x, z);
+            break;
+        case 11:
+            printf("%i de Novembro de %i", x, z);
+            break;
+        case 12:
+            printf(" %i de Dezembro de %i", x, z);
+        }
+
+}
+
+EXERCÍCIO 3
+#include <stdio.h>
+
+int verif(int x);
+
+int main()
+{
+    int num;
+    printf("Insira um numero: \n");
+    scanf("%i", &num);
+
+    verif(num);
+
+    if((verif(num))== 1)
+    {
+        printf("E positivo");
+    }
+
+    if((verif(num))== 0)
+    {
+        printf("E zero");
+    }
+    if((verif(num)) == -1)
+    {
+        printf("E negativo");
+    }
+    return 0;
+}
+
+int verif(int x)
+{
+    if(x == 0)
+        return 0;
+    else if(x > 0)
+        return 1;
+    else
+        return -1;
+}
+
+EXERCÍCIO 4:
+#include <stdio.h>
+#include <math.h>
+
+int verif()
+
+int main()
+{
+    int num;
+    peinrf("Insira um numero");
+    scanf("%i", &num);
+    
+    
+}
 
