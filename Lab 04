@@ -269,4 +269,28 @@ float calculo(float a, float b)
 }
 
 EXERCÍCIO 9:
+#include <stdio.h>
+#define pi 3.141592
+
+float calculo(float a, float b);
+
+int main()
+{
+    float altura, raio, volume;
+    printf("Insir a altura e o raio do clinidro: \n");
+    scanf("%f \n %f", &altura,  &raio);
+
+    volume = calculo(raio, altura);
+    printf("O volume eh: %f \n",volume);
+
+}
+
+float calculo(float a, float b)
+{
+    float c;
+    c = pi * (a * a) * b;
+    return c;
+}
+
+EXERCÍCIO 10:
 
