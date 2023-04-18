@@ -131,14 +131,142 @@ EXERCÍCIO 4:
 #include <stdio.h>
 #include <math.h>
 
-int verif()
+int verif(int a);
 
 int main()
 {
-    int num;
-    peinrf("Insira um numero");
+    int num, n2;
+    printf("Insira um numero: \n");
     scanf("%i", &num);
-    
-    
+
+    n2 = verif(num);
+    if(n2 && (num > 0))
+        printf("Eh um quadrado perfeito!!!");
+    else
+        printf("Nao eh um quadrado perfeito");
+    return 0;
 }
+
+int verif(int a)
+{
+    int inteiro;
+    float real;
+    real = sqrt(a);
+    inteiro = sqrt(a);
+
+    if(real == inteiro)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+EXERCÍCIO 5:
+#include <stdio.h>
+#include <math.h>
+
+#define pi 3.1415
+
+float volume(float a);
+
+int main()
+{
+    float raio, vol;
+    printf("Insira um raio: \n");
+    scanf("%f", &raio);
+
+    vol = volume(raio);
+
+    printf("O volume eh: %f \n", vol);
+
+    return 0;
+}
+
+float volume(float a)
+{
+    float b;
+    b = (4 * (pi * (a * a * a)))/ 3.0;
+    return b;
+}
+
+EXERCÍCIO 6:
+#include <stdio.h>
+
+int tempo(int a, int b, int c);
+
+int main()
+{
+    int hora, min, seg, conversao;
+    printf("Insira um hora, minuto e segundo: \n");
+    scanf("%i \n %i \n %i", &hora, &min, &seg);
+
+    conversao = tempo(hora, min, seg);
+
+    printf("O periodo de tempo eh: %i segundos \n", conversao);
+    return 0;
+}
+
+int tempo(int a, int b, int c)
+{
+    int conversao;
+    conversao = (a * 3600) + (b * 60) + c;
+    return conversao;
+}
+
+EXERCÍCIO 7:
+#include <stdio.h>
+
+float conversao (float a);
+
+int main()
+{
+    float C, result;
+    printf("Insira um valor em graus celcius: \n");
+    scanf("%f", &C);
+
+    result =  conversao (C);
+    printf("A conversao de %f graus celcius em farenheint eh: %f", C, result);
+
+
+    return 0;
+}
+
+float conversao (float a)
+{
+    float b;
+    b = a * (9.0 / 5.0) + 32;
+    return b;
+}
+
+EXERCÍCIO 8:
+#include <stdio.h>
+#include <math.h>
+
+
+float calculo(float a, float b);
+
+int main()
+{
+    float cat1, cat2, hipot;
+    printf("Insira  os dois catetos: \n");
+    scanf("%f \n %f", &cat1, &cat2);
+
+    hipot = calculo(cat1, cat2);
+
+    printf("A hipotenusa eh: %f \n", hipot);
+    return 0;
+}
+float calculo(float a, float b)
+{
+    float c, d;
+
+    c = (a * a) + (b * b);
+    d = sqrt(c);
+    return d;
+}
+
+EXERCÍCIO 9:
 
