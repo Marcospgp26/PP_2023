@@ -293,4 +293,29 @@ float calculo(float a, float b)
 }
 
 EXERCÍCIO 10:
+#include <stdio.h>
+
+void comparar(int a, int b);
+
+int main()
+{
+    int num1, num2;
+    printf("Insira um numero: \n");
+    scanf("%i %i", &num1, &num2);
+
+    comparar(num1, num2);
+    return 0;
+}
+
+void comparar(int a, int b)
+{
+    if(a == b)
+        printf("Eles sao iguais");
+    else if(a > b)
+        printf("%i eh maior que %i", a, b);
+    else
+        printf("%i eh maior que %i", b, a);
+}
+
+EXERCÍCIO 11:
 
