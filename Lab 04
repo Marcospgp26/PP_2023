@@ -318,4 +318,187 @@ void comparar(int a, int b)
 }
 
 EXERCÍCIO 11:
+#include <stdio.h>
+
+float equac(float a, float b, float c, char d);
+
+int main()
+{
+    float nota1, nota2, nota3, media;
+    char par;
+
+    printf("Inisra as 3 notas:\n");
+    scanf("%f %f %f", &nota1, &nota2, &nota3);
+    do
+    {
+        printf("Insira o tipo de media a ser realizada:\n (A) para Media Aritmetica \n (P) para Media Ponderada \n ");
+        par = getchar();
+
+        if((par == 'P') || (par == 'p') || (par == 'A') || (par == 'a'))
+        {
+            break;
+        }
+        else
+        {
+            printf("Escolha uma opcao valida \n \n");
+            continue;
+        }
+    }while((par != 'a') && (par != 'A') && (par != 'p') && (par != 'P'));
+
+    media = equac(nota1, nota2, nota3, par);
+
+    if((par == 'a') || (par == 'A'))
+        printf("A media aritmética eh: %f", media);
+
+    else if((par == 'p') || (par == 'P'))
+        printf("A media ponderada eh: %f", media);
+
+
+
+
+
+    return 0;
+}
+
+float equac(float a, float b, float c, char d)
+{
+    float result;
+    if((d == 'a') || (d == 'A'))
+    {
+        return result = (a + b + c) / 3;
+    }
+    else if((d == 'p') || (d == 'P'))
+    {
+        return result = ((5* a) + (3 * b) + (2 * c))/3;
+    }
+}
+
+EXERCÍCIO 12:
+#include <stdio.h>
+
+void algarismo(int a);
+
+int main()
+{
+    int num;
+    printf("Insira um numero: \n");
+    scanf("%i", &num);
+
+    algarismo(num);
+
+    return 0;
+}
+
+void algarismo(int a)
+{
+    int resto, soma = 0;
+    if(a < 0)
+    {
+        printf("Numero Invalido");
+    }
+    else
+    {
+        while(a != 0)
+        {
+            resto = a % 10;
+            soma += resto;
+            a = a / 10;
+        }
+        printf("A soma dos algarismos eh: %i \n", soma);
+    }
+}
+
+EXERCÍCIO 13:
+#include <stdio.h>
+
+float calculo(float a, float b, char c);
+
+int main()
+{
+    //definir variáveis
+    float num1, num2, result;
+    char simb;
+
+    //inserir os numeros para realizar as operacoes
+    printf("Insira dois numeros: \n");
+    scanf("%f %f", &num1, &num2);
+
+    do{
+        //escolha da operacao
+        printf("Digite qual operaco vc quer realizar entre esses dois numeros: \n");
+        printf("(+) Adição \n (-) Subtracao \n (*) Multiplicacao \n (/) Divisao \n");
+        scanf("%c", &simb);
+
+        if((simb != '+') && (simb != '-') && (simb != '*') && (simb != '/'))
+            printf("Escolha invalida \n \n");
+
+    }while((simb != '+') && (simb != '-') && (simb != '*') && (simb != '/'));
+
+    if((num2 == 0 ) && (simb == '/'))
+    {
+        printf("Impossivel realizar a operacao");
+    }
+    else
+    {
+        result = calculo(num1, num2, simb);
+        printf("O resultado eh : %f", result);
+    }
+}
+
+float calculo(float a, float b, char c)
+{
+    float d;
+    switch(c)
+    {
+        case '+':
+            d = a +b;
+            break;
+        case '-':
+            d = a - b;
+            break;
+        case '*':
+            d = a * b;
+            break;
+        case '/':
+            d = a / b;
+    }
+    return d;
+}
+
+EXERCÍCIO 14:
+#include <stdio.h>
+
+void result(float dist, float qnt);
+
+int main()
+{
+    // desclaração de variaveis
+    float distancia, quantidade;
+
+    //inserção de dados
+    printf("Indique a distancia percorrida e a quantia de litros consumida nessa distancia: \n");
+    scanf("%f %f", &distancia, &quantidade);
+
+    //cahamar a função
+    result(distancia, quantidade);
+    return 0;
+}
+
+void result(float dist, float qnt)
+{
+    //declaração da variavel de consumo0
+    float consumo;
+
+    consumo = dist / qnt;
+
+    if(consumo < 8)
+        printf("Venda o carro");
+    else if((consumo >= 8) && (consumo <= 14))
+        printf("Econômico");
+    else
+        printf("Super economico!!");
+
+}
+
+EXERCÍCIO 15:
 
