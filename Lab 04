@@ -501,4 +501,181 @@ void result(float dist, float qnt)
 }
 
 EXERCÍCIO 15:
+#include <stdio.h>
+
+void verif(l1, l2, l3); //funcao de verificacao se eh um triangulo
+void classific(l1, l2, l3); //funcao de classificacao do triangulo
+
+int main()
+{
+    //declaração de variaveis
+    int lado1, lado2, lado3;
+    printf("Insira os 3 lados do triangulo: \n");
+    scanf("%i %i %i", &lado1, &lado2, &lado3); //comunicacao com o usuário
+    
+    if((lado 1 <= 0) || (lado2 <= 0) || (lado3 <= 0)) //verificar se os lados existem
+    {
+        printf("Medidas inexistentes");
+    }
+    else
+    {
+        verif(lado1, lado2, lado3); //chamando a função de verificação
+    }
+
+    return 0;
+}
+
+void verif(l1, l2, l3)
+{
+    if((l1 < (l2 + l3)) && (l2 < (l1 + l3)) && (l3 < (l2 + l1))) //verificando se eh um triangulo
+    {
+        printf("Eh um triangulo \n");
+        classific(l1, l2, l3); //chamando a funcao de classificacao
+    }
+    else
+    {
+        printf("Nao eh um triangulo \n");
+    }
+}
+
+void classific(l1, l2 ,l3)
+{
+    if((l1 == l2) && (l1 == l3) && (l2 == l3)) //verificar se eh equilatero
+    {
+        printf("Eh um triangulo equilatero!");
+    }
+    else if((l1 != l2) && (l1 != l3) && (l2 != l3)) //verificar se eh escaleno
+    {
+        printf("Eh um triangulo escaleno!");
+    }
+    else
+    {
+        printf("Eh um triangulo isoceles!"); //verificar se eh isóceles
+    }
+}
+
+EXERCÍCIO 16:
+#include <stdio.h>
+
+void linha(n);
+
+int main()
+{
+    //declaração de variáveis
+    int numero;
+
+    //comunicação com o usuário
+    printf("Insira um numero de sinais de = para formar a linha: \n");
+    scanf("%i", &numero);
+
+    if(numero <= 0)
+    {
+        printf("Quantidade inexistente.");
+    }
+    else
+    {
+        linha(numero);
+    }
+
+    return 0;
+}
+
+void linha(n)
+{
+    int i;
+
+    for(i = 0; i < n; i++)
+    {
+        printf("=");
+    }
+}
+
+EXERCÍCIO 17:
+#include <stdio.h>
+
+void soma(int n1, int n2);
+
+int main()
+{
+    //declaração de variáveis
+    int num1, num2;
+
+    //comnicação como usuário
+    printf("Insira dois numeros inteiros POSITIVOS: \n");
+    scanf("%i %i", &num1, &num2);
+
+    //verificando se os numeros são positivos
+    if((num1 >= 0) && (num2 >= 0))
+    {
+        //chamando a função soma
+        soma(num1, num2);
+    }
+    else
+    {
+        printf("Numeros invalidos.");
+    }
+
+    return 0;
+}
+
+void soma(int n1, int n2)
+{
+    int par, soma = 0;
+    for(par = (n1 + 1); par < n2; par++)
+    {
+        soma = soma + par;
+    }
+    printf("A soma eh: %i", soma);
+}
+
+EXERCÍCIO 18:
+#include <stdio.h>
+
+float exponencial(int x, int z);
+
+int main()
+{
+    //declaração de variáveis
+    int x, z;
+    float result;
+    //comunicação com o usuário
+    printf("Insira dois numeros inteiros: \n");
+    scanf("%i %i", &x, &z);
+
+    result = exponencial(x, z);
+
+    printf("O resultado eh:%f \n",result);
+
+    return 0;
+}
+
+float exponencial(int x, int z)
+{
+    int par;
+    float resultado = 1;
+    //verificando se z > 0
+    if(z > 0)
+    {
+        for(par = 0; par < z; par++)
+        {
+            resultado = resultado * x;
+        }
+    }
+    //verificando se z = 0;
+    else if(z == 0)
+    {
+        resultado = 1;
+    }
+    //se z < 0
+    else if (z < 0)
+    {
+        for(par = 0; par > z; par --)
+        {
+            resultado = resultado * (1 /(float) x);
+        }
+    }
+    return resultado;
+}
+
+EXERCÍCIO 19:
 
