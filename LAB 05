@@ -1,0 +1,79 @@
+Exercício 1
+#include <stdio.h>
+
+int main()
+{
+    //variável de loop
+    int loop;
+
+    //gerando um vetor
+    int A[6];
+
+    //criando uma variável inteira
+    int armazenar;
+
+    //atribuindo valores ao vetor
+     A[0] = 1;
+     A[1] = 0;
+     A[2] = 5;
+     A[3] = -2;
+     A[4] = -5;
+     A[5] = 7;
+
+    //armazenando na variável a soma de A[0] e A[1] e A[5]
+    armazenar = A[0] + A[1] + A[5];
+
+    //modificando a posição 4
+     A[4] = 100;
+
+    //mostrando os valores de A, um em cada linha
+    for(loop = 0; loop < 6; loop++)
+    {
+        printf("%i \n", A[loop]);
+    }
+}
+
+EXERCÍCIO 2:
+#include <stdio.h>
+
+int main()
+{
+    //declarando o vetor
+    int vet[8];
+
+    //declarando as demais variáveis
+    int X, Y, loop;
+
+    //estabelecendo valores para as posições do vetor
+    for(loop = 0; loop < 8; loop++)
+    {
+        printf("Insira um valor para uma posicao do loop (posicao %i de 8) \n", loop + 1);
+        scanf("%i", &vet[loop]);
+    }
+
+    //escolhendo X e Y
+    do{
+        printf("Insira um valor de posicao do vetor (de 0 a 7) \n");
+        scanf("%i", &X);
+
+        printf("Insira um valor de posicao do vetor (de 0 a 7) \n");
+        scanf("%i", &Y);
+
+        if((X < 0) || (X > 7))
+        {
+            printf("Valor do primeiro parametro invalido \n \n");
+
+        }
+
+        if((Y < 0) || (Y > 7))
+        {
+            printf("Valor do segundo parametro invalido \n \n");
+
+        }
+    }while((X < 0) || (X > 7) || (Y < 0) || (Y > 7));
+
+    //imprimindo a soma
+    printf("A soma das posicoes eh: %i \n", vet[X] + vet[Y]);
+    
+    return 0;
+}
