@@ -894,4 +894,58 @@ void triangulo(int altura, int largura)
 }
 
 EXERCÍCIO 24:
+#include <stdio.h>
+
+void triangulo(int altura, int largura);
+
+int main()
+{
+    int altura, largura;
+
+    do{
+        printf("Insira uma altura maior que um \n");
+        scanf("%i", &altura);
+
+        if(altura <= 1)
+        {
+            printf("Altura invalida (menor ou igual a um)");
+            printf("\n \n");
+        }
+    }while(altura <= 1);
+
+    largura = (2 * altura) - 1;
+
+    triangulo(altura, largura);
+
+    return 0;
+}
+
+void triangulo(int altura, int largura)
+{
+    int i, k, j, metade, teste;
+    metade = largura / 2;
+
+    for(i = 0; i < altura; i++)
+    {
+        teste = metade - i;
+
+        while(teste > 0)
+        {
+            printf(" ");
+            teste--;
+        }
+
+        for(k = 0; k<= i; k++)
+        {
+            printf("*");
+        }
+
+        for(j = 0; j < i; j++)
+        {
+            printf("*");
+        }
+
+        printf("\n");
+    }
+}
 
