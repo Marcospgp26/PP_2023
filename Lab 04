@@ -922,17 +922,17 @@ int main()
 
 void triangulo(int altura, int largura)
 {
-    int i, k, j, metade, teste;
+    int i, k, j, metade, espaco;
     metade = largura / 2;
 
     for(i = 0; i < altura; i++)
     {
-        teste = metade - i;
+        espaco = metade - i;
 
-        while(teste > 0)
+        while(espaco > 0)
         {
             printf(" ");
-            teste--;
+            espaco--;
         }
 
         for(k = 0; k<= i; k++)
@@ -948,4 +948,5 @@ void triangulo(int altura, int largura)
         printf("\n");
     }
 }
+
 
