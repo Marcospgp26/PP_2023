@@ -678,4 +678,220 @@ float exponencial(int x, int z)
 }
 
 EXERCÍCIO 19:
+#include <stdio.h>
+
+int fatorial(int numero); //declaração da função
+
+int main()
+{
+    //declaração das variáveis na main
+    int num, result;
+
+    //interação com o usuário
+    do{
+        printf("Insira um numero inteiro positivo para calcular seu fatorial: \n");
+        scanf("%i", &num);
+        if(num < 0)
+        {
+            printf("Numero invalido (menor que zero). \n \n");
+        }
+
+    }while(num < 0);
+
+    //chamar  função fatorial
+    result = fatorial(num);
+
+    //imprimir o resultado
+    printf("O fatorial de %i eh %i \n", num, result);
+
+    return 0;
+}
+
+int fatorial(int numero)
+{
+    int resultado;
+    if(numero == 0)
+    {
+        return 1;
+    }
+    else
+    {
+       resultado = numero * (fatorial(numero - 1));
+       return resultado;
+    }
+}
+
+EXERCÍCIO 20:
+#include <stdio.h>
+
+int quant(int num); //declarar a função
+
+int main()
+{
+    //declarando as variáveis
+    int numero, resultado;
+
+    //comunicar com o usuário
+    do{
+        printf("Insira um numero maior ou iogual a zero: \n");
+        scanf("%i", &numero);
+
+        //verificar se o numero é válido
+        if(numero < 0)
+        {
+            printf("Numero INVÁLIDO (negativo");
+        }
+
+    }while(numero < 0);
+
+    //chamar a função quant (calcula a quantidade de numeros primos)
+    resultado = quant(numero);
+
+    printf("%i", resultado);
+    return 0;
+}
+
+int quant(int num)
+{
+    //declarando variáveis de loop
+    int i, k, div = 0;
+    //declarar a variável de retorno
+    int quantia = 0;
+
+    for(i = 2; i < num; i++)
+    {
+        //verificando se i esta entre os menores primos
+        if((i == 2) || (i == 3) || (i == 5))
+        {
+            quantia = quantia + 1;
+            continue;
+        }
+
+        //verificando se i eh divisível pelos menores primos
+        else if(((i % 2) == 0) || ((i % 3) == 0) || ((i % 5) == 0))
+        {
+            continue;
+        }
+
+        //verificar os demais numeros (verificar o resto da divisão do numero por anteriores a ele);
+
+        for(k = 7; k < (i / 2); k + 2)
+        {
+            if((i % k) != 0)
+            {
+                div = div + 1;
+                break;
+            }
+        }
+        
+        //verificar se div = 0, (caso T = primo)
+        if(div == 0)
+        {
+            quantia = quantia + 1;
+        }
+
+        div = 0;
+    }
+    //retorno do resultado
+    return quantia;
+}
+
+EXERCÍCIO 21:
+#include <stdio.h>
+
+//declaração da função piramide
+void piramide(int linhas);
+
+int main()
+{
+    //declaração de variáveis
+    int num;
+
+    //comunicação com o usuário
+    do{
+        printf("Insira um numero positivo que representa as linhas da meia piramide: \n");
+        scanf("%i", &num);
+
+        //resposta caso numero seja invalido
+        if(num < 0)
+        {
+            printf("Numero negativo ou muito grande (INVALIDO). \n \n");
+        }
+
+    }while(num < 0);
+
+    //chamar a função que imprimirá a piramide
+    piramide(num);
+
+    return 0;
+}
+
+void piramide(int linhas)
+{
+    //declarar as variáveis de quantia de linhas e colunas
+    int quantia_l, quantia_c;
+
+    //imprimir a piramide
+    for(quantia_l = 1; quantia_l <= linhas; quantia_l++)
+    {
+        for(quantia_c = 0; quantia_c < quantia_l; quantia_c++)
+        {
+            printf("!");
+        }
+        printf("\n");
+    }
+}
+
+EXERCÍCIO 23:
+#include <stdio.h>
+
+void triangulo(int altura, int largura);
+
+int main()
+{
+    int largura, altura;
+
+    do{
+        printf("Insira um numero que sera a largura do triangulo: \n");
+        scanf("%i", &largura);
+
+        if(largura<= 1)
+        {
+            printf("Lagura invalida(precisa ser maior que 1) \n \n");
+        }
+    }while(largura <= 1);
+
+    altura = (2 *largura) - 1;
+
+    triangulo(altura, largura);
+
+    return 0;
+}
+
+void triangulo(int altura, int largura)
+{
+    int par_largura, par_numero, metade;
+    metade = (altura /2);
+
+    for(par_largura = 0; par_largura <= metade; par_largura++)
+    {
+        for(par_numero = 0; par_numero <= par_largura; par_numero++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    for(; metade > 0;metade--)
+    {
+        for(par_numero = 0; par_numero < metade; par_numero++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+
+}
+
+EXERCÍCIO 24:
 
