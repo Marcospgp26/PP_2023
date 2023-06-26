@@ -1006,8 +1006,74 @@ int main()
 
     printf("O total da compra eh: %f", total);
     fclose(file);
+
+
     return 0;
 }
 
 EX 19:
+
+EX 20:
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    FILE *fp;
+    char **aluno;
+    int *nota, tam, n, i, j;
+
+    fp = fopen("NOTAS.txt", "w");
+    if(fp == NULL)
+    {
+        printf("ERRO");
+        exit(1);
+    }
+
+    printf("Insira a quantidade de alunos da sala: ");
+    scanf("%i", &n);
+
+    aluno = (char **) calloc(n, sizeof(char *));
+    if(aluno == NULL)
+    {
+        printf("SEM MEMORIA");
+        exit(1);
+    }
+    for(i = 0; i < n;i++)
+    {
+        aluno[i] = (char *) calloc(40, sizeof(char));
+        if(aluno[i] == NULL)
+        {
+            printf("SEM MEMORIA");
+            exit(1);
+        }
+    }
+
+    nota = (int *) calloc(n, sizeof(int));
+
+    for(i = 0; i < n; i++)
+    {
+        printf("Insira o nome do aluno: ");
+        setbuf(stdin,NULL);
+        fgets(aluno[i], 40, stdin);
+        tam = strlen(aluno[i]);
+        aluno[i][40] = '\0';
+        for(j = tam - 1; j < 40;j++)
+        {
+            aluno[i][j] = ' ';
+        }
+
+        printf("Insira a nota desse aluno: ");
+        scanf("%i", &nota[i]);
+    }
+
+    for(i = 0; i < n; i++)
+    {
+        fprintf(fp,"%s %d\n",aluno[i],nota[i]);
+    }
+
+}
+
+EX 21:
 
